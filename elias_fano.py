@@ -8,11 +8,11 @@ with open(sys.argv[1]) as uncompressed_file:
     for line in uncompressed_file:
         nums += [int(x) for x in line.split()]
     n = len(nums)
-    m = nums[n-1]
-    l = math.floor(math.log2(m/n))
+    max = nums[n-1]
+    l = math.floor(math.log2(max/n))
     L = bytearray()
     U = bytearray()
-    u = math.ceil(math.log2(m))-l
+    u = math.ceil(math.log2(max))-l
 
     for i in range(0, n):
         if nums[i] == 0:
